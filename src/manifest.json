@@ -16,7 +16,7 @@
     },
     "dataSources": {
       "data": {
-        "uri": "data/data.json",
+        "uri": "https://raw.githubusercontent.com/marianfoo/SAP-NPM-API-collection-data/live-data/data/data.json",
         "type": "JSON"
       },
       "versions": {
@@ -112,7 +112,7 @@
         {
           "name": "hotPackages",
           "pattern": "",
-          "target": "TargetHotPackagesView"
+          "target": "TargetAllPackagesView"
         },
         {
           "name": "allPackages",

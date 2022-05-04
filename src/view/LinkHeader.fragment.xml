@@ -1,19 +1,6 @@
 <core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
   <ToolbarSpacer />
-  <Button
-    text="{i18n>linkheader_fragment_hot}"
-    class="sapUiNoMarginBegin sapUiNoMarginEnd"
-    press=".onButtonHeaderSelect($event, 'hotPackages')"
-    type="{= ${settings>/headerKey} === 'hotPackages' ? 'Emphasized' : 'Transparent' }"
-  >
-    <customData>
-      <core:CustomData key="headerKey" value="hotPackages" />
-    </customData>
-    <layoutData>
-      <OverflowToolbarLayoutData priority="High" group="1" />
-    </layoutData>
-  </Button>
-  <Button
+  <!-- <Button
     text="{i18n>linkheader_fragment_all}"
     class="sapUiNoMarginBegin sapUiNoMarginEnd"
     press=".onButtonHeaderSelect($event, 'allPackages')"
@@ -25,21 +12,8 @@
     <layoutData>
       <OverflowToolbarLayoutData priority="High" group="1" />
     </layoutData>
-  </Button>
-  <Button
-    text="{i18n>linkheader_fragment_tags}"
-    class="sapUiNoMarginBegin sapUiNoMarginEnd"
-    press=".onButtonHeaderSelect($event, 'tags')"
-    type="{= ${settings>/headerKey} === 'tags' ? 'Emphasized' : 'Transparent' }"
-  >
-    <customData>
-      <core:CustomData key="headerKey" value="tags" />
-    </customData>
-    <layoutData>
-      <OverflowToolbarLayoutData priority="High" group="1" />
-    </layoutData>
-  </Button>
-  <Button
+  </Button> -->
+  <!-- <Button
     text="{i18n>linkheader_fragment_timeline}"
     class="sapUiNoMarginBegin sapUiNoMarginEnd"
     press=".onButtonHeaderSelect($event, 'timeline')"
@@ -51,6 +25,6 @@
     <layoutData>
       <OverflowToolbarLayoutData priority="Low" group="2" />
     </layoutData>
-  </Button>
+  </Button> -->
   <ToolbarSpacer />
 </core:FragmentDefinition>

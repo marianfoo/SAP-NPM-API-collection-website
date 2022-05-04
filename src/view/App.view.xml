@@ -4,7 +4,7 @@
       <headerContent>
         <OverflowToolbar style="Clear">
           <ToolbarSpacer />
-          <Button
+          <!-- <Button
             class="sapUiTinyMargin"
             core:require="{ sapMLib: 'sap/m/library' }"
             text="{i18n>app_view_addyourpackage}"
@@ -15,13 +15,13 @@
             <layoutData>
               <OverflowToolbarLayoutData priority="{= ${device>/system/phone} === true ? 'AlwaysOverflow' : 'NeverOverflow' }" />
             </layoutData>
-          </Button>
+          </Button> -->
           <Button
             class="sapUiTinyMargin"
             core:require="{ sapMLib: 'sap/m/library' }"
             type="Neutral"
             icon="sap-icon://font-awesome-icons/github"
-            press="sapMLib.URLHelper.redirect('https://github.com/ui5-community/bestofui5-website#readme', true)"
+            press="sapMLib.URLHelper.redirect('https://github.com/marianfoo/SAP-NPM-API-collection-website#readme', true)"
           >
             <layoutData>
               <OverflowToolbarLayoutData priority="{= ${device>/system/phone} === true ? 'AlwaysOverflow' : 'NeverOverflow' }" />
