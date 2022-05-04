@@ -2,6 +2,7 @@
   <List
     id="listHotPackages"
     growing="true"
+    growingScrollToLoad="true"
     headerText="{i18n>hot_packages_view_header}"
     mode="None"
     items="{path: 'data>/packages/', length : '499', sorter : { path : 'downloadsFortnightGrowth',descending: 'false' },
