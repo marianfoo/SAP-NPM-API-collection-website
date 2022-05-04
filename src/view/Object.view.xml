@@ -91,7 +91,7 @@
         <subSections>
           <ObjectPageSubSection mode="Expanded" title="{i18n>object_view_section_readme}" id="readme" titleUppercase="true">
             <blocks>
-              <md:Markdown id="test2" content="{data>readme}" baseURL="https://raw.githubusercontent.com/{data>gitHubOwner}/{data>gitHubRepo}/main///" class="wrapCodeText" />
+              <md:Markdown id="test2" content="{data>changelog}" baseURL="https://raw.githubusercontent.com/{data>gitHubOwner}/{data>gitHubRepo}/main///" class="wrapCodeText" />
             </blocks>
           </ObjectPageSubSection>
         </subSections>
