@@ -44,11 +44,14 @@ export default class AllPackages extends AppController {
 	}
 
 	public onSortSelectChange(event: Event): void {
-		const selectKey = event.getParameter("selectedItem").getKey();
+		const selectKeySort: string = event.getParameter("selectedItem").getKey();
+		const selectKeySortArray = selectKeySort.split(":");
+		const selectKey = selectKeySortArray[0];
+		const selectDescending = selectKeySortArray[1] === "true";
 		const binding = this.getView().byId("listAllPackages").getBinding("items");
 		const oSorter = new Sorter({
 			path: selectKey,
-			descending: true,
+			descending: selectDescending,
 		});
 		binding.sort(oSorter);
 	}

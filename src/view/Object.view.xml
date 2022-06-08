@@ -18,6 +18,41 @@
     </headerTitle>
     <headerContent>
       <m:VBox>
+        <m:ObjectStatus title="{i18n>object_view_header_author}" text="{data>author}" />
+        <m:ObjectStatus title="{i18n>object_view_header_license}" text="{data>license}" />
+        <m:HBox>
+          <core:Icon src="sap-icon://font-awesome-icons/github" class="sapUiSmallMarginEnd" />
+          <m:Link text="{i18n>object_view_header_github}" href="{data>githublink}" target="_blank" />
+        </m:HBox>
+        <m:HBox visible="{= !!${data>npmlink}}">
+          <core:Icon src="sap-icon://font-awesome-icons/npm" class="sapUiSmallMarginEnd" />
+          <m:Link text="{i18n>object_view_header_npm}" href="{data>npmlink}" target="_blank" />
+        </m:HBox>
+        <m:HBox visible="{= !!${data>vscodelink}}">
+          <core:Icon src="sap-icon://font-awesome-icons/microsoft" class="sapUiSmallMarginEnd" />
+          <m:Link text="{i18n>object_view_header_microsoft}" href="{data>vscodelink}" target="_blank" />
+        </m:HBox>
+        <m:layoutData>
+          <m:FlexItemData growFactor="1" />
+        </m:layoutData>
+      </m:VBox>
+      <m:VBox>
+        <tnt:InfoLabel id="downloads365" text="{i18n>object_view_header_downloads365} {data>downloads365}" renderMode="Loose" colorScheme="5" visible="{= ${data>downloads365} >= 0}" />
+        <tnt:InfoLabel id="downloads30" text="{i18n>object_view_header_downloads30} {data>downloadsCurrentMonth}" renderMode="Loose" colorScheme="5" visible="{= ${data>downloadsCurrentMonth} >= 0}" />
+        <tnt:InfoLabel
+          id="downloads14"
+          text="{i18n>object_view_header_downloads14} {data>downloadsCurrentFortnight}"
+          renderMode="Loose"
+          colorScheme="5"
+          visible="{= ${data>downloadsCurrentFortnight} >= 0}"
+        />
+        <tnt:InfoLabel id="installs" text="{i18n>object_view_header_vscodeInstalls} {data>vscodeInstalls}" renderMode="Loose" colorScheme="5" visible="{= ${data>vscodeInstalls} >= 0}" />
+        <tnt:InfoLabel id="version" text="{i18n>object_view_header_version} {data>version}" renderMode="Loose" colorScheme="3" visible="{= !!${data>version}}" />
+        <m:layoutData>
+          <m:FlexItemData growFactor="1" />
+        </m:layoutData>
+      </m:VBox>
+      <m:VBox>
         <m:ObjectStatus
           title="{i18n>object_view_header_created_at}"
           text="{
@@ -30,6 +65,14 @@
           }"
         />
         <m:ObjectStatus
+          icon="{
+          parts: ['data>updatedAt'],
+          formatter: 'org.openui5.bestofui5.controller.BaseController.formatter.formatUpdatedAtIcon'
+        }"
+          state="{
+          parts: ['data>updatedAt'],
+          formatter: 'org.openui5.bestofui5.controller.BaseController.formatter.formatUpdatedAtState'
+        }"
           title="{i18n>object_view_header_updated_at}"
           text="{
             path: 'data>updatedAt',
