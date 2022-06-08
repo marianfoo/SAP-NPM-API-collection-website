@@ -107,12 +107,12 @@
         {
           "name": "default",
           "pattern": "",
-          "target": "TargetHotPackagesView"
+          "target": "TargetAllPackagesView"
         },
         {
           "name": "hotPackages",
           "pattern": "",
-          "target": "TargetAllPackagesView"
+          "target": "TargetHotPackagesView"
         },
         {
           "name": "allPackages",

@@ -25,7 +25,7 @@
 
       <FormattedText id="trend-desc" htmlText="{$this>description}" />
       <HBox id="trend-item-tags-box" class="sapUiTinyMarginTop" wrap="Wrap">
-        <tnt:InfoLabel id="trend-item-type" class="sapUiTinyMarginEnd" text="{$this>type}" renderMode="Narrow" colorScheme="2" displayOnly="false" />
+        <!-- <tnt:InfoLabel id="trend-item-type" class="sapUiTinyMarginEnd" text="{$this>type}" renderMode="Narrow" colorScheme="2" displayOnly="false" /> -->
 
         <!-- <tnt:InfoLabel id="trend-item-tag3" class="sapUiTinyMarginEnd" text=" STARS {$this>stars}" renderMode="Narrow"
           colorScheme="5" displayOnly="false" visible="{= !!${$this>stars} }" />

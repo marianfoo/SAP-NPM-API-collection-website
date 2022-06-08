@@ -12,11 +12,11 @@
     <core:Item key="downloads365" text="{i18n>all_packages_view_select_downloads365}" />
     <core:Item key="updatedAt" text="{i18n>all_packages_view_select_updatedAt}" />
     <core:Item key="createdAt" text="{i18n>all_packages_view_select_createdAt}" />
-    <core:Item key="addedToBoUI5" text="{i18n>all_packages_view_select_addedToBoUI5}" />
   </Select>
   <List
     id="listAllPackages"
     growing="true"
+    growingScrollToLoad="true"
     headerText="{i18n>all_packages_view_header}"
     mode="None"
     items="{path: 'data>/packages/', length : '499'}"

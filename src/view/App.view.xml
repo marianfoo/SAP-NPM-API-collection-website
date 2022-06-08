@@ -17,9 +17,10 @@
             </layoutData>
           </Button> -->
           <Button
-            class="sapUiTinyMargin"
+            class="sapUiTinyMargin openui5headerButton"
             core:require="{ sapMLib: 'sap/m/library' }"
-            type="Neutral"
+            type="Transparent"
+            visible="{= ${device>/system/desktop}}"
             icon="sap-icon://font-awesome-icons/github"
             press="sapMLib.URLHelper.redirect('https://github.com/marianfoo/SAP-NPM-API-collection-website#readme', true)"
           >
