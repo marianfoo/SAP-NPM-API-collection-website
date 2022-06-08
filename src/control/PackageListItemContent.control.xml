@@ -36,7 +36,7 @@
         <tnt:InfoLabel
           id="downloads14"
           class="sapUiTinyMarginEnd"
-          text="Downloads 14 {$this>downloads14}"
+          text="Downloads14 {$this>downloads14}"
           tooltip="Downloads last 14 days"
           renderMode="Narrow"
           colorScheme="5"
@@ -47,7 +47,7 @@
         <tnt:InfoLabel
           id="downloads30"
           class="sapUiTinyMarginEnd"
-          text="Downloads 30 {$this>downloads30}"
+          text="Downloads30 {$this>downloads30}"
           tooltip="Downloads last 30 days"
           renderMode="Narrow"
           colorScheme="5"
@@ -58,7 +58,7 @@
         <tnt:InfoLabel
           id="downloads365"
           class="sapUiTinyMarginEnd"
-          text="Downloads 365 {$this>downloads365}"
+          text="Downloads365 {$this>downloads365}"
           tooltip="Downloads last 365 days"
           renderMode="Narrow"
           colorScheme="5"

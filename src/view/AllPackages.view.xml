@@ -7,9 +7,9 @@
   xmlns:core="sap.ui.core"
 >
   <Select id="selectSort" forceSelection="true" change=".onSortSelectChange">
+    <core:Item key="downloads365:true" text="{i18n>all_packages_view_select_downloads365}" />
     <core:Item key="downloadsCurrentFortnight:true" text="{i18n>all_packages_view_select_downloadsCurrentFortnight}" />
     <core:Item key="downloadsCurrentMonth:true" text="{i18n>all_packages_view_select_downloadsCurrentMonth}" />
-    <core:Item key="downloads365:true" text="{i18n>all_packages_view_select_downloads365}" />
     <core:Item key="updatedAt:true" text="{i18n>all_packages_view_select_updatedAt}" />
     <core:Item key="createdAt:true" text="{i18n>all_packages_view_select_createdAt}" />
     <core:Item key="name:false" text="{i18n>all_packages_view_select_name}" />

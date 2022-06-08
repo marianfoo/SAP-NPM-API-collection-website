@@ -89,6 +89,17 @@
       </m:VBox>
     </headerContent>
     <sections>
+      <ObjectPageSection id="npmSection" visible="{= !!${data>downloadsHistory} }">
+        <subSections>
+          <ObjectPageSubSection mode="Expanded" title="{i18n>object_view_section_npm}" titleUppercase="true" id="npmDownloadsSection">
+            <blocks>
+              <cc:BarChart title="{i18n>object_view_section_npm_chart_header}" color="#288bff" records="{data>downloadsHistory}">
+                <cc:ChartRecord label='{data>yearMonth}' value="{data>downloads}" />
+              </cc:BarChart>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
       <ObjectPageSection id="changelogSection">
         <subSections>
           <ObjectPageSubSection mode="Expanded" title="{i18n>object_view_section_changelog}" id="changelog" titleUppercase="true">
