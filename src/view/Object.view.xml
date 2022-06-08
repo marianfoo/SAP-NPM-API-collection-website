@@ -107,6 +107,61 @@
           </ObjectPageSubSection>
         </subSections>
       </ObjectPageSection>
+      <ObjectPageSection id="versionsSection" visible="{= !!${data>versions} }">
+        <subSections>
+          <ObjectPageSubSection mode="Expanded" title="{i18n>object_view_section_versions}" id="versions" titleUppercase="true">
+            <blocks>
+              <m:List
+                items="{
+                path: 'data>versions/',
+                sorter: {
+                  path: 'date',
+                  descending: true
+                },
+                filters: [
+                {
+                  filters: [
+                    {
+                      path: 'version',
+                      operator: 'NE',
+                      value1: 'created'
+                    },
+                    {
+                      path: 'version',
+                      operator: 'NE',
+                      value1: 'modified'
+                    },
+                    {
+                      path: 'version',
+                      operator: 'NE',
+                      value1: '0.0.1-security'
+                    }
+                  ],
+                  and: true
+                }
+                ]
+              }"
+                id="listVersions"
+              >
+                <m:StandardListItem
+                  type="Navigation"
+                  press=".onPressStandardListItemNpmLink"
+                  id="listVersionsItem"
+                  title="{data>version}"
+                  description="{
+                  path: 'data>date',
+                  type: 'sap.ui.model.type.DateTime',
+                  formatOptions: {
+                    source: {pattern: 'yyyy-MM-ddTHH:mm:ss.SSSX'},
+                    pattern: 'dd.MM.yyyy'
+                  }
+                }"
+                />
+              </m:List>
+            </blocks>
+          </ObjectPageSubSection>
+        </subSections>
+      </ObjectPageSection>
     </sections>
   </ObjectPageLayout>
 </mvc:View>
