@@ -47,6 +47,7 @@ export default class AllPackages extends AppController {
 		const selectKeySort: string = event.getParameter("selectedItem").getKey();
 		const selectKeySortArray = selectKeySort.split(":");
 		const selectKey = selectKeySortArray[0];
+		this.getView().getModel("settings").setProperty("/selectKey", selectKey);
 		const selectDescending = selectKeySortArray[1] === "true";
 		const binding = this.getView().byId("listAllPackages").getBinding("items");
 		const oSorter = new Sorter({

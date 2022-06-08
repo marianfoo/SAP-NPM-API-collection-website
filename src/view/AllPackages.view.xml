@@ -6,7 +6,7 @@
   xmlns:ui5cc="org.openui5.bestofui5.control"
   xmlns:core="sap.ui.core"
 >
-  <Select id="selectSort" forceSelection="true" change=".onSortSelectChange" selectedKey="{settings>/selectKey}">
+  <Select id="selectSort" forceSelection="true" change=".onSortSelectChange">
     <core:Item key="downloadsCurrentFortnight:true" text="{i18n>all_packages_view_select_downloadsCurrentFortnight}" />
     <core:Item key="downloadsCurrentMonth:true" text="{i18n>all_packages_view_select_downloadsCurrentMonth}" />
     <core:Item key="downloads365:true" text="{i18n>all_packages_view_select_downloads365}" />
