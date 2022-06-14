@@ -12,7 +12,16 @@
   displayBlock="true"
   height="100%"
 >
-  <ObjectPageLayout alwaysShowContentHeader="true" id="ObjectPageLayout" showAnchorBar="true" upperCaseAnchorBar="true" height="100%" class="fixImageWidth">
+  <ObjectPageLayout
+    id="ObjectPageLayout"
+    enableLazyLoading="true"
+    isChildPage="true"
+    useTwoColumnsForLargeScreen="true"
+    showAnchorBar="true"
+    upperCaseAnchorBar="true"
+    height="100%"
+    class="fixImageWidth"
+  >
     <headerTitle>
       <ObjectPageHeader id="headerForTest" objectTitle="{data>name}" objectSubtitle="{data>description}" />
     </headerTitle>

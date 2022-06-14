@@ -6,6 +6,35 @@
   xmlns:ui5cc="org.openui5.bestofui5.control"
   xmlns:core="sap.ui.core"
 >
+  <MultiInput
+    startSuggestion="0"
+    placeholder="{i18n>app_view_search_placeholder}"
+    class="sapUiMediumMarginTopBottom"
+    id="multiInput"
+    width="100%"
+    liveChange=".liveSearch"
+    tokenUpdate=".onUpdateToken"
+    showSuggestion="true"
+    showValueHelp="false"
+    showTableSuggestionValueHelp="false"
+    value="{settings>/search}"
+    suggestionItems="{
+        path: 'data>/tags/',
+        sorter: {
+            path: 'count',
+            descending: true
+            }
+        }"
+    tokens="{settings>/tokens/}"
+  >
+    <core:ListItem key="{data>name};{data>type}" text="{data>name}" additionalText="{data>type}" />
+    <tokens>
+      <Token key="{settings>key}" text="{settings>key}" />
+    </tokens>
+    <layoutData>
+      <FlexItemData minWidth="{= ${device>/system/phone} === true ? '' : '500px' }" />
+    </layoutData>
+  </MultiInput>
   <Select id="selectSort" forceSelection="true" change=".onSortSelectChange">
     <core:Item key="downloads365:true" text="{i18n>all_packages_view_select_downloads365}" />
     <core:Item key="downloadsCurrentFortnight:true" text="{i18n>all_packages_view_select_downloadsCurrentFortnight}" />

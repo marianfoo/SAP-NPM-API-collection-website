@@ -16,13 +16,6 @@ export default class AllPackages extends AppController {
 		const search = this.getView().getModel("settings").getProperty("/search");
 		const token = this.getView().getModel("settings").getProperty("/tokens");
 		this.queryControl.applySearchFilter();
-		// // save the current query state
-		// this._oRouterArgs = event.getParameter("arguments");
-		// this._oRouterArgs["?query"] = this._oRouterArgs["?query"] || {};
-		// // search/filter via URL hash
-		// if (this._oRouterArgs["?query"].search || this._oRouterArgs["?query"].filterType) {
-		//   this._applySearchFilter(this._oRouterArgs["?query"].search, this._oRouterArgs["?query"].filterType);
-		// }
 	}
 
 	public onAfterRendering(): void {
@@ -55,5 +48,26 @@ export default class AllPackages extends AppController {
 			descending: selectDescending,
 		});
 		binding.sort(oSorter);
+	}
+
+	public liveSearch(event: Event): void {
+		const value = event.getParameter("value").trim();
+		this.getView().getModel("settings").setProperty("/search", value);
+		if (this.getRouter().getHashChanger().getHash() != "packages") {
+			this.getView().getModel("settings").setProperty("/headerKey", "allPackages");
+			this.navTo("allPackages");
+		} else {
+			this.onPatternMatched();
+		}
+	}
+
+	public onUpdateToken(event: Event): void {
+		this.queryControl.onUpdateToken(event);
+		if (this.getRouter().getHashChanger().getHash() != "packages") {
+			this.getView().getModel("settings").setProperty("/headerKey", "allPackages");
+			this.navTo("allPackages");
+		} else {
+			this.onPatternMatched();
+		}
 	}
 }
