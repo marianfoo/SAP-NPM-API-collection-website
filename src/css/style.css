@@ -123,3 +123,7 @@
 .sapMFT > em {
 	background: rgb(130, 106, 226, 0.5);
 }
+
+.setWidthInherit > div:first-child {
+	width: inherit;
+}

@@ -36,10 +36,20 @@
         </OverflowToolbar>
       </subHeader>
       <content>
-        <FlexBox width="100%" height="100%" id="_IDGenFlexBox2" direction="Column" alignItems="{= ${device>/system/phone} === true ? 'Inherit' : 'Center' }" justifyContent="Start">
-          <NavContainer width="{= ${device>/system/phone} === true ? '' : '1024px' }" id="pageContainer" class="fixOverflow">
+        <FlexBox
+          class="setWidthInherit"
+          width="inherit"
+          height="100%"
+          id="_IDGenFlexBox2"
+          direction="Column"
+          alignItems="{= ${device>/system/phone} === true ? 'Inherit' : 'Center' }"
+          justifyContent="Start"
+        >
+          <!-- <NavContainer width="{= ${device>/system/phone} === true ? '' : '100%' }" id="pageContainer" class="fixOverflow"> -->
+          <NavContainer width="auto" id="pageContainer" class="fixOverflow">
             <layoutData>
-              <FlexItemData minHeight="100%" maxWidth="{= ${device>/system/phone} === true ? '' : '1024px' }" />
+              <!-- <FlexItemData minHeight="100%" maxWidth="{= ${device>/system/phone} === true ? '' : '100%' }" /> -->
+              <FlexItemData minHeight="100%" />
             </layoutData>
           </NavContainer>
         </FlexBox>

@@ -50,7 +50,7 @@
     headerText="{i18n>all_packages_view_header}"
     mode="None"
     items="{path: 'data>/packages/', length : '499'}"
-    width="{= ${device>/system/phone} === true ? '' : '1024px' }"
+
   >
     <CustomListItem id="_IDGenCustomListItem1" type="Navigation" press="onPress">
       <ui5cc:PackageListItemContent
