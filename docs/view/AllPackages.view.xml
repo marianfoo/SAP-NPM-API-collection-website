@@ -1,0 +1,75 @@
+<mvc:View
+  controllerName="org.openui5.bestofui5.controller.AllPackages"
+  xmlns:mvc="sap.ui.core.mvc"
+  displayBlock="true"
+  xmlns="sap.m"
+  xmlns:ui5cc="org.openui5.bestofui5.control"
+  xmlns:core="sap.ui.core"
+>
+  <MultiInput
+    startSuggestion="0"
+    placeholder="{i18n>app_view_search_placeholder}"
+    class="sapUiMediumMarginTopBottom"
+    id="multiInput"
+    width="100%"
+    liveChange=".liveSearch"
+    tokenUpdate=".onUpdateToken"
+    showSuggestion="true"
+    showValueHelp="false"
+    showTableSuggestionValueHelp="false"
+    value="{settings>/search}"
+    suggestionItems="{
+        path: 'data>/tags/',
+        sorter: {
+            path: 'count',
+            descending: true
+            }
+        }"
+    tokens="{settings>/tokens/}"
+  >
+    <core:ListItem key="{data>name};{data>type}" text="{data>name}" additionalText="{data>type}" />
+    <tokens>
+      <Token key="{settings>key}" text="{settings>key}" />
+    </tokens>
+    <layoutData>
+      <FlexItemData minWidth="{= ${device>/system/phone} === true ? '' : '500px' }" />
+    </layoutData>
+  </MultiInput>
+  <Select id="selectSort" forceSelection="true" change=".onSortSelectChange">
+    <core:Item key="downloads365:true" text="{i18n>all_packages_view_select_downloads365}" />
+    <core:Item key="downloadsCurrentFortnight:true" text="{i18n>all_packages_view_select_downloadsCurrentFortnight}" />
+    <core:Item key="downloadsCurrentMonth:true" text="{i18n>all_packages_view_select_downloadsCurrentMonth}" />
+    <core:Item key="updatedAt:true" text="{i18n>all_packages_view_select_updatedAt}" />
+    <core:Item key="createdAt:true" text="{i18n>all_packages_view_select_createdAt}" />
+    <core:Item key="name:false" text="{i18n>all_packages_view_select_name}" />
+  </Select>
+  <List
+    id="listAllPackages"
+    growing="true"
+    growingScrollToLoad="true"
+    headerText="{i18n>all_packages_view_header}"
+    mode="None"
+    items="{path: 'data>/packages/', length : '499'}"
+
+  >
+    <CustomListItem id="_IDGenCustomListItem1" type="Navigation" press="onPress">
+      <ui5cc:PackageListItemContent
+        name="{data>name}"
+        githublink="{data>githublink}"
+        npmlink="{data>npmlink}"
+        description="{
+          parts: ['data>description', 'settings>/search'],
+          formatter: 'org.openui5.bestofui5.controller.BaseController.formatter.formatHighlight'
+        }"
+        type="{data>type}"
+        stars="{data>stars}"
+        forks="{data>forks}"
+        updatedAt="{data>updatedAt}"
+        createdAt="{data>createdAt}"
+        downloads14="{= ${settings>/selectKey} === 'downloadsCurrentFortnight' ? ${data>downloadsCurrentFortnight} : -1 }"
+        downloads30="{= ${settings>/selectKey} === 'downloadsCurrentMonth' ? ${data>downloadsCurrentMonth} : -1 }"
+        downloads365="{data>downloads365}"
+      />
+    </CustomListItem>
+  </List>
+</mvc:View>

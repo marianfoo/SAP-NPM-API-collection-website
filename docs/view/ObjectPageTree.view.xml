@@ -1,0 +1,5 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" width="100%" controllerName="org.openui5.bestofui5.controller.Object">
+  <Tree mode="SingleSelectLeft" includeItemInSelection="true" id="Tree" items="{content>/}" selectionChange=".onTreeSelect">
+    <StandardTreeItem title="{content>name}" />
+  </Tree>
+</mvc:View>

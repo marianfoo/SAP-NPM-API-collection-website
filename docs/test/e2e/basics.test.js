@@ -1,0 +1,1 @@
+"use strict";const Main=require("./pageObjects/Main");describe("ui5 basic",()=>{before(async()=>{await Main.open()});it("should have the right title",async()=>{const e=await browser.getTitle();expect(e).toEqual("Hot Packages - Best of UI5")})});

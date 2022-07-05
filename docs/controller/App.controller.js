@@ -1,0 +1,1 @@
+"use strict";sap.ui.define(["./BaseController","./QueryControl"],function(e,n){function t(e){return e&&e.__esModule&&typeof e.default!=="undefined"?e.default:e}const o=t(e);const u=t(n);const r=o.extend("org.openui5.bestofui5.controller.App",{onInit:function e(){this.queryControl=new u(this.getView())}});return r});

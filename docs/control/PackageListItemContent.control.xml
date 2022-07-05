@@ -1,0 +1,135 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:layout="sap.ui.layout">
+  <FlexBox id="trend-item-box" class="item-box" alignItems="Start">
+    <!-- <NumericContent id="trend-rank" value="{$this>downloadsMonthlyGrowth}" valueColor="{$this>rankColor}"
+      indicator="{$this>rankIndicator}" class="sapUiSmallMarginTop" scale="%"
+      visible="{= !!${$this>downloadsMonthlyGrowth} &amp;&amp; ${$this>showRank}}" withMargin="true" /> -->
+
+    <VBox id="trend-item-inner-box" class="sapUiSmallMargin min-width-zero">
+      <layout:HorizontalLayout>
+        <Title level="H3" text="{$this>name}" />
+        <core:Icon
+          class="sapUiSmallMarginBegin sapUiResponsiveContentPadding"
+          core:require="{ sapMLib: 'sap/m/library' }"
+          src="sap-icon://font-awesome-icons/github"
+          press="sapMLib.URLHelper.redirect(${$this>githublink}, true)"
+          visible="{= !!${$this>githublink}}"
+        />
+        <core:Icon
+          class="sapUiSmallMarginBegin sapUiResponsiveContentPadding"
+          core:require="{ sapMLib: 'sap/m/library' }"
+          src="sap-icon://font-awesome-icons/npm"
+          press="sapMLib.URLHelper.redirect(${$this>npmlink}, true)"
+          visible="{= !!${$this>npmlink}}"
+        />
+      </layout:HorizontalLayout>
+
+      <FormattedText id="trend-desc" htmlText="{$this>description}" />
+      <HBox id="trend-item-tags-box" class="sapUiTinyMarginTop" wrap="Wrap">
+        <!-- <tnt:InfoLabel id="trend-item-type" class="sapUiTinyMarginEnd" text="{$this>type}" renderMode="Narrow" colorScheme="2" displayOnly="false" /> -->
+
+        <!-- <tnt:InfoLabel id="trend-item-tag3" class="sapUiTinyMarginEnd" text=" STARS {$this>stars}" renderMode="Narrow"
+          colorScheme="5" displayOnly="false" visible="{= !!${$this>stars} }" />
+
+        <tnt:InfoLabel id="trend-item-tag1" class="sapUiTinyMarginEnd" text="FORKS {$this>forks}" renderMode="Narrow"
+          colorScheme="5" displayOnly="false" visible="{= !!${$this>forks} }" /> -->
+
+        <tnt:InfoLabel
+          id="downloads14"
+          class="sapUiTinyMarginEnd"
+          text="Downloads14 {$this>downloads14}"
+          tooltip="Downloads last 14 days"
+          renderMode="Narrow"
+          colorScheme="5"
+          displayOnly="false"
+          visible="{= ${$this>downloads14} >= 0}"
+        />
+
+        <tnt:InfoLabel
+          id="downloads30"
+          class="sapUiTinyMarginEnd"
+          text="Downloads30 {$this>downloads30}"
+          tooltip="Downloads last 30 days"
+          renderMode="Narrow"
+          colorScheme="5"
+          displayOnly="false"
+          visible="{= ${$this>downloads30} >= 0}"
+        />
+
+        <tnt:InfoLabel
+          id="downloads365"
+          class="sapUiTinyMarginEnd"
+          text="Downloads365 {$this>downloads365}"
+          tooltip="Downloads last 365 days"
+          renderMode="Narrow"
+          colorScheme="5"
+          displayOnly="false"
+        />
+
+        <tnt:InfoLabel
+          id="trend-item-last-update"
+          class="sapUiTinyMarginEnd"
+          renderMode="Narrow"
+          colorScheme="6"
+          displayOnly="false"
+          text="{= ${i18n>list_item_tag_updated}.replace('{0}', ${
+                    path: '$this>updatedAt',
+                    type: 'sap.ui.model.type.Date',
+                    formatOptions: {
+                      source : {
+                        pattern: 'yyyy-MM-ddTHH:mm:ss.SSSZ'
+                      },
+                      relative: true,
+                      relativeScale: 'auto',
+                      relativeStyle: 'wide'
+                    }
+                  }) }"
+          visible="{= !!${$this>updatedAt} }"
+        />
+
+        <tnt:InfoLabel
+          id="added-to-bestofui5"
+          class="sapUiTinyMarginEnd"
+          renderMode="Narrow"
+          colorScheme="6"
+          displayOnly="false"
+          text="{= ${i18n>added_to_best_of_ui5}.replace('{0}', ${
+                  path: '$this>addedToBoUI5',
+                  type: 'sap.ui.model.type.Date',
+                  formatOptions: {
+                    source : {
+                      pattern: 'yyyy-MM-ddTHH:mm:ss.SSSZ'
+                    },
+                    relative: true,
+                    relativeScale: 'auto',
+                    relativeStyle: 'wide'
+                  }
+                }) }"
+          visible="{= !!${$this>addedToBoUI5} }"
+        />
+
+        <tnt:InfoLabel
+          id="trend-item-created"
+          class="sapUiTinyMarginEnd"
+          renderMode="Narrow"
+          colorScheme="6"
+          displayOnly="false"
+          text="{= ${i18n>list_item_tag_created}.replace('{0}', ${
+                    path: '$this>createdAt',
+                    type:'sap.ui.model.type.Date',
+                    formatOptions: {
+                      source : {
+                        pattern: 'yyyy-MM-ddTHH:mm:ss X'
+                      },
+                      relative: true,
+                      relativeScale: 'auto',
+                      relativeStyle: 'wide'
+                    }
+                  }) }"
+          visible="{= !!${$this>createdAt} }"
+        />
+      </HBox>
+    </VBox>
+
+    <Image id="trend-cat-type" width="4rem" src="{$this>typeImage}" class="sapUiSmallMarginTop sapUiSmallMarginEnd" />
+  </FlexBox>
+</core:FragmentDefinition>

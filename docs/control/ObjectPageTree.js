@@ -1,0 +1,1 @@
+"use strict";sap.ui.define(["sap/uxap/BlockBase"],function(e){"use strict";return e.extend("org/openui5/bestofui5/view/ObjectPageTree",{metadata:{}})});
